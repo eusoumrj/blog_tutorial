@@ -1,16 +1,2 @@
-<h1>Artigos</h1>
-<table>
-  <tr>
-    <th>Título</th>
-    <th>Texto</th>
-    <th></th>
-  </tr>
-
-  <% @articles.each do |article| %>
-    <tr>
-      <td><%= article.title %></td>
-      <td><%= article.text %></td>
-      <td><%= link_to 'Exibir', article_path(article) %></td>
-    </tr>
-  <% end %>
-</table>
+<h1>Olá, Rails!</h1>
+<%= link_to 'Meu Blog', controller: 'articles' %>
