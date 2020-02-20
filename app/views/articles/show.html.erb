@@ -9,32 +9,10 @@
 </p>
 
 <h2>Comentários:</h2>
-<% @article.comments.each do |comment| %>
-  <p>
-    <strong>Autor:</strong>
-    <%= comment.commenter %>
-  </p>
-
-  <p>
-    <strong>Comentário:</strong>
-    <%= comment.body %>
-  </p>
-<% end %>
+<%= render @article.comments %>
 
 <h2>Postar um comentário:</h2>
-<%= form_with(model: [ @article, @article.comments.build ], local:true) do |form| %>
-  <p>
-    <%= form.label :autor %><br>
-    <%= form.text_field :commenter %>
-  </p>
-  <p>
-    <%= form.label :comentário %><br>
-    <%= form.text_area :body %>
-  </p>
-  <p>
-    <%= form.submit %>
-  </p>
-<% end %>
+<%= render 'comments/form' %>
 
 <%= link_to 'Editar', edit_article_path(@article) %> |
 <%= link_to 'Voltar', articles_path %>
