@@ -15,6 +15,9 @@
       <td><%= article.text %></td>
       <td><%= link_to 'Exibir', article_path(article) %></td>
       <td><%= link_to 'Editar', edit_article_path(article) %></td>
+      <td><%= link_to 'Apagar', article_path(article),
+              method: :delete,
+              data: {confirm: 'Tem certeza?'} %></td>
     </tr>
   <% end %>
 </table>
